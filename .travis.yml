@@ -19,3 +19,20 @@ notifications:
   email:
     recipients:
       - wnghkdcjdtns@naver.com
+
+before_deploy:
+  - zip -r freelect-springboot2-webservice *
+  - mkdir -p deloy
+  - mv freelect-springboot2-webservice.zip deploy/freelect-springboot2-webservice.zip
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY #travis repo settings에 설정된값
+
+    secret_access_key: $AWS_SECRET_KEY # travis repo settings에 설정된값
+
+    bucket: freelect-springboot-build #S3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip 파일 접ㄱ근을 private으로
+    local_dir: deploy #before_deploy에서 생성한 디렉토리
+    wait-until-deployed: true
