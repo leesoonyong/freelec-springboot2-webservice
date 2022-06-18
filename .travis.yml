@@ -21,7 +21,7 @@ notifications:
       - wnghkdcjdtns@naver.com
 
 before_deploy:
-  - zip -r freelect-springboot2-webservice *
+  - zip -r freelect-springboot2-webservice
   - mkdir -p deloy
   - mv freelect-springboot2-webservice.zip deploy/freelect-springboot2-webservice.zip
 deploy:
