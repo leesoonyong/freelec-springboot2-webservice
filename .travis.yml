@@ -1,0 +1,12 @@
+language: java
+jdk:
+  - openjdk8
+
+branches:
+  only:
+    - master
+# Travis CI 서버의Home
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.gradle'
