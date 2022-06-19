@@ -45,8 +45,8 @@ deploy:
     secret_access_key: $AWS_SECRET_KEY # travis repo settings에 설정된값
     bucket: freelect-springboot-build #S3 버킷
     key: freelect-springboot2-webservice.zip #빌드파일을 압축해서 전달
-    build_type: zip
-    application: freelect-springboot-webservice # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
+    bundle_type: zip
+    application: freelect-springboot2-webservice   # 웹 콘솔에서 등록한 CodeDeploy 애플리케이션
     deployment_group: freelect-springboot2-webservice-group # 웹콘솔에서 등록한CodeDeply 배포 그룹4
     region: ap-northeast-2
     wait-until-deployed: true
