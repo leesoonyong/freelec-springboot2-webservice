@@ -49,4 +49,4 @@ deploy:
 notifications:
   email:
     recipients:
-      - wnghkdcjdtns@naver.com
+      - wnghkdcjdtns@naver.com #메일주소 등록
